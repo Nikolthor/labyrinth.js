@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Labyrinth generator</title>
+        <meta name="description" content="Labyrinth (maze) generator">
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <canvas class="display1" width="1800" height="1800"></canvas>
+        <div class="control-panel">
+            <div class="controls-row">
+
+                <div class="control-wrapper">
+                    <span>Analyze: </span>
+                    <input class="control" name="analyze" type="checkbox" value="1" checked>
+                </div>
+
+                <div class="control-wrapper">
+                    <span>Display shortest path: </span>
+                    <input class="control" name="displayPath" type="checkbox" value="1" checked>
+                </div>
+
+                <div class="control-wrapper">
+                    <span>Display available area: </span>
+                    <input class="control" name="displayAvailableArea" type="checkbox" value="1" checked>
+                </div>
+
+                <div class="control-wrapper">
+                    <span>Use path masks: </span>
+                    <input class="control" name="pathMasks" type="checkbox" value="1" checked>
+                </div>
+
+                <div class="control-wrapper">
+                    <select class="control" name="algorythm">
+                        <option value="1">Random without normalization</option>
+                        <option selected value="2">Random with pattern normalization</option>
+                        <option value="3">Random with random normalization</option>
+                    </select>
+                </div>
+
+                <div class="control-wrapper">
+                    <select class="control action-change" name="size" data-action="resize">
+                        <option value="30">30x30</option>
+                        <option selected value="60">60x60</option>
+                        <option value="90">90x90</option>
+                        <option value="120">120x120</option>
+                        <option value="150">150x150</option>
+                        <option value="180">180x180</option>
+                    </select>
+                </div>
+
+                <div class="control-wrapper">
+                    <span>Iterations: </span><span class="iteration">0</span>
+                </div>
+
+                <div class="control-wrapper">
+                    <button data-action="create" class="action-new action">Create new</button>
+                </div>
+
+            </div>
+            
+        </div>
+    </body>
+    <script src="src/interface.js"></script>
+    <script src="src/stopwatch.js"></script>
+    <script src="src/display.js"></script>
+    <script src="src/graph.js"></script>
+    <script src="src/labyrinth.js"></script>
+    <script src="src/app.js"></script>
+</html>
